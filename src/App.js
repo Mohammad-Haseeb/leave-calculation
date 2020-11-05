@@ -1,24 +1,51 @@
-import logo from './logo.svg';
+import React,{useState,Provider} from 'react';
 import './App.css';
+import  Forms from './Component/FirstInputField';
+
+import InputOneData,{InputTwoData,LabelValues} from './Source/InputeContext';
+
+
+
 
 function App() {
+  
+  const CarriedVacation = useState([]);
+  const [ConsumedLeave, setConsumedLeave] = useState(-10);
+ 
+
+  
+ 
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    
+   <>
+   
+     <div className="wrapper ">
+         <div className="form-wrapper">
+                  <div className="InputCentralize">
+                 <h2 className="Title">Leave Calculation App</h2>
+              
+                 <InputOneData.Provider value={CarriedVacation}>
+              
+              
+                   <InputTwoData.Provider value={setConsumedLeave}>
+                 <div className="FormResposive">
+                  <Forms/>
+                  </div>
+                      </InputTwoData.Provider>
+                           
+                   </InputOneData.Provider>
+ 
+                  
+                   </div>
+                   
+                  
+         </div>
+
+     </div>
+     
+   </>
   );
 }
 

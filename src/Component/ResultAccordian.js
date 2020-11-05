@@ -10,8 +10,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     width: '80%',
     padding:"5%",
-    
-
   },
   heading: {
     fontSize: theme.typography.pxToRem(15),
@@ -20,19 +18,14 @@ const useStyles = makeStyles((theme) => ({
   coloring: {
     backgroundColor: "#1a202c ",
     color: "#cfd8dc",
-    
   }
 }));
 
 export default function SimpleAccordion(props) {
   const classes = useStyles();
   const [Salary, setSalary] = useState(props.CarriedVocation-props.ConsumedConvocation-Math.ceil(props.CarriedVocation/2));
-  
-  
   return (
-    
-    
-    <div className={classes.root}>
+   <div className={classes.root}>
       <Accordion className={classes.coloring}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
@@ -41,15 +34,15 @@ export default function SimpleAccordion(props) {
         >
           <Typography className={classes.heading}>Result</Typography>
         </AccordionSummary>
-        <AccordionDetails>
+         <AccordionDetails>
           <Typography>
            <div  >
-             <div className="ResultShow" >
-             <h5>  Leaves that Conver to Salar : {Salary>0 ? Salary: 0}</h5>
-            </div>
-            <div className="ResultShow" >
-             <h5>  Leave To Cleared By 31 Dec 2020 : {Salary>0 ? Salary-9 : 0}</h5>
-            </div>
+                <div className="ResultShow" >
+                   <h5>  Leaves that Conver to Salar : {Salary>0 ? Salary: 0}</h5>
+                </div>
+                <div className="ResultShow" >
+                  <h5>  Leave To Cleared By 31 Dec 2020 : {Salary>0 ? Salary-9 : 0}</h5>
+               </div>
            </div>
           </Typography>
         </AccordionDetails>

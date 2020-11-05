@@ -1,47 +1,29 @@
 import React,{useState,Provider} from 'react';
 import './App.css';
-import  Forms from './Component/FirstInputField';
-
-import InputOneData,{InputTwoData,LabelValues} from './Source/InputeContext';
-
+import  FormsAndResult from './Component/FirstInputField';
+import InputOneData,{InputTwoData} from './Source/InputeContext';
 
 
 
 function App() {
-  
   const CarriedVacation = useState([]);
   const [ConsumedLeave, setConsumedLeave] = useState(-10);
- 
-
-  
- 
-
-  
-  return (
-    
-   <>
+    return (
+    <>
    
      <div className="wrapper ">
-         <div className="form-wrapper">
+           <div className="form-wrapper">
                   <div className="InputCentralize">
-                 <h2 className="Title">Leave Calculation App</h2>
-              
-                 <InputOneData.Provider value={CarriedVacation}>
-              
-              
-                   <InputTwoData.Provider value={setConsumedLeave}>
-                 <div className="FormResposive">
-                  <Forms/>
+                       <h2 className="Title">Leave Calculation App</h2>
+                          <InputOneData.Provider value={CarriedVacation}>
+                              <InputTwoData.Provider value={setConsumedLeave}>
+                                 <div className="FormResposive">
+                                       <FormsAndResult/>
+                                   </div>
+                                       </InputTwoData.Provider>
+                                          </InputOneData.Provider>
                   </div>
-                      </InputTwoData.Provider>
-                           
-                   </InputOneData.Provider>
- 
-                  
-                   </div>
-                   
-                  
-         </div>
+                           </div>
 
      </div>
      

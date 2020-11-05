@@ -104,8 +104,8 @@ export default function FormsAndResult() {
     </form>  
     <ul>
       {
-        FullData.map(x=>{
-        return <li>{<SimpleAccordion CarriedVocation={x.CarriedVocation} ConsumedConvocation={x.ConsumedConvocation}/>}</li>
+        FullData.map((x,y)=>{
+        return <li key={y}>{<SimpleAccordion CarriedVocation={x.CarriedVocation} ConsumedConvocation={x.ConsumedConvocation}/>}</li>
         })
       }
     </ul>

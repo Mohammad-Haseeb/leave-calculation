@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleAccordion(props) {
   const classes = useStyles();
-  const [Salary, setSalary] = useState(props.CarriedVocation-props.ConsumedConvocation-Math.ceil(props.CarriedVocation/2));
+  const Salary = useState(props.CarriedVocation-props.ConsumedConvocation-Math.ceil(props.CarriedVocation/2));
   return (
    <div className={classes.root}>
       <Accordion className={classes.coloring}>
@@ -38,10 +38,10 @@ export default function SimpleAccordion(props) {
           <Typography>
            <div  >
                 <div className="ResultShow" >
-                   <h5>  Leaves that Conver to Salar : {Salary>0 ? Salary: 0}</h5>
+                   <h5>  Leaves that Conver to Salar : {Salary[0]>0 ? Salary[0]: 0}</h5>
                 </div>
                 <div className="ResultShow" >
-                  <h5>  Leave To Cleared By 31 Dec 2020 : {Salary>0 ? Salary-9 : 0}</h5>
+  <h5>  Leave To Cleared By 31 Dec 2020 : {Salary[0]>0 ? Salary[0]-9 : 0} </h5>
                </div>
            </div>
           </Typography>
